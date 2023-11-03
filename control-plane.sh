@@ -49,7 +49,7 @@ sudo apt update
 sudo apt install kubelet kubeadm kubectl -y
 
 #specify cri socket
-sudo kubeadm --cri-socket unix:///var/run/cri-dockerd.sock --pod-network-cidr=192.168.0.0/16
+sudo kubeadm init --cri-socket unix:///var/run/cri-dockerd.sock --pod-network-cidr=192.168.0.0/16
 
 #init kubeadm
 sudo kubeadm init --pod-network-cidr
