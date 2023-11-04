@@ -48,11 +48,8 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 sudo apt update
 sudo apt install kubelet kubeadm kubectl -y
 
-#specify cri socket
+#init kubeadm, specify cri socket and pod network cidr
 sudo kubeadm init --cri-socket unix:///var/run/cri-dockerd.sock --pod-network-cidr=192.168.0.0/16
-
-#init kubeadm
-sudo kubeadm init --pod-network-cidr
 
 # start cluster
 mkdir -p $HOME/.kube
